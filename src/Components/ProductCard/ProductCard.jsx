@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const ProductCard = () => {
   return (
-    <div className="border-2 border-yellow-500 card w-96 bg-base-100">
+    <div className="border-2 border-yellow-500 card lg:w-96 bg-base-100">
       <figure>
         <img src="/samsung.jpg" alt="Product" />
       </figure>

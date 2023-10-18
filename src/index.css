@@ -5,3 +5,12 @@
 .font-sans-serif {
   font-family: "Work Sans", sans-serif;
 }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
