@@ -5,8 +5,10 @@ import Footer from "../Components/Footer/Footer";
 const Root = () => {
   const location = useLocation();
   return (
-    <div className={location.pathname == "/" ? "relative" : ""}>
-      <div className={location.pathname == "/" ? "absolute z-50 w-full" : ""}>
+    <div className={location.pathname == "/" ? "relative" : "block"}>
+      <div
+        className={location.pathname == "/" ? "absolute z-50 w-full" : "block"}
+      >
         <Navbar></Navbar>
       </div>
       <Outlet></Outlet>

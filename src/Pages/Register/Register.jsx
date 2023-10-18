@@ -52,12 +52,17 @@ const Register = () => {
         <Toaster />
       </div>
       <div className="hero">
-        <div className="flex-col hero-content">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl text-[#6C2C71] font-bold">Register!</h1>
+        <div className="flex-col md:flex-row-reverse hero-content">
+          <div className="">
+            <img
+              className="hidden md:block lg:h-[600px]"
+              src="/register.jpg"
+              alt=""
+            />
           </div>
-          <div className="flex-shrink-0 w-full md:w-[400px] shadow-2xl card">
+          <div className="flex-shrink-0 w-full md:w-[400px] border-2 border-yellow-500 card">
             <form onSubmit={handleSubmit} className="card-body">
+              <div></div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -101,13 +106,13 @@ const Register = () => {
               </div>
               <div className="mt-6 form-control">
                 <input
-                  className="bg-[#6C2C71] hover:opacity-90 text-white text-3xl h-[60px] px-[20px] rounded-none"
+                  className="bg-yellow-500 hover:opacity-90 text-white text-3xl h-[60px] px-[20px] rounded-none"
                   type="submit"
-                  value="Register"
+                  value="SIGN UP"
                 />
                 <button
                   type="button"
-                  className="h-[40px] mt-4 w-full text-center border border-[#6C2C71] font-medium text-[#6C2C71] rounded-3xl"
+                  className="h-[40px] mt-4 w-full text-center border border-black font-medium text-black rounded-3xl"
                   onClick={handleGoogleSignIn}
                 >
                   Sign In With Google

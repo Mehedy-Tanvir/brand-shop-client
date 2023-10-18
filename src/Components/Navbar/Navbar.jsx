@@ -11,7 +11,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "lg:text-red-500 font-semibold text-[18px] underline"
+              ? "lg:text-yellow-600 font-semibold text-[18px] underline"
               : "lg:text-[#111] font-semibold text-[18px]"
           }
           to="/"
@@ -25,7 +25,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "lg:text-red-500 font-semibold text-[18px] underline"
+              ? "lg:text-yellow-600 font-semibold text-[18px] underline"
               : "lg:text-[#111] font-semibold text-[18px]"
           }
           to="/addProduct"
@@ -39,7 +39,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "lg:text-red-500 font-semibold text-[18px] underline"
+              ? "lg:text-yellow-600 font-semibold text-[18px] underline"
               : "lg:text-[#111] font-semibold text-[18px]"
           }
           to="/cart"
@@ -55,7 +55,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "lg:text-red-500 font-semibold text-[18px] underline"
+              ? "lg:text-yellow-600 font-semibold text-[18px] underline"
               : "lg:text-[#111] font-semibold text-[18px]"
           }
           to="/login"
