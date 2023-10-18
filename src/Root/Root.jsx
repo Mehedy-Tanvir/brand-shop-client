@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
 const Root = () => {
+  const location = useLocation();
   return (
-    <div className="relative">
-      <div className="absolute z-50 w-full">
+    <div className={location.pathname == "/" ? "relative" : ""}>
+      <div className={location.pathname == "/" ? "absolute z-50 w-full" : ""}>
         <Navbar></Navbar>
       </div>
       <Outlet></Outlet>
