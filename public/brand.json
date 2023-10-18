@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung",
+    "image": "https://imagizer.imageshack.com/img924/6282/h5FBh0.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Apple",
+    "image": "https://imagizer.imageshack.com/img923/182/5lPVAF.jpg"
+  },
+  {
+    "id": 3,
+    "name": "LG",
+    "image": "https://imagizer.imageshack.com/img923/6946/Swh8y0.jpg"
+  },
+  {
+    "id": 4,
+    "name": "HP",
+    "image": "https://imagizer.imageshack.com/img922/1823/Jm0nnD.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Sony",
+    "image": "https://imagizer.imageshack.com/img924/3268/GGhBsB.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Intel",
+    "image": "https://imagizer.imageshack.com/img922/8316/G77RZD.png"
+  }
+]

@@ -15,6 +15,7 @@ const Routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("/brand.json"),
       },
       {
         path: "/addProduct",
