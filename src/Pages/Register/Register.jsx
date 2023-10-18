@@ -47,7 +47,7 @@ const Register = () => {
       .catch((error) => toast.error(error.message));
   };
   return (
-    <div className="container h-screen px-2 mx-auto">
+    <div className="container px-2 mx-auto">
       <div>
         <Toaster />
       </div>

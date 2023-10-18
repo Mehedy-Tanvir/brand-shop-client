@@ -40,7 +40,7 @@ const Login = () => {
       .catch((error) => toast.error(error.message));
   };
   return (
-    <div className="container h-screen px-2 mx-auto">
+    <div className="container px-2 mx-auto">
       <Toaster />
       <div className="hero">
         <div className="flex-col md:flex-row-reverse hero-content">
