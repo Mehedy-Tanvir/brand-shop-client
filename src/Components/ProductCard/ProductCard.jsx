@@ -41,9 +41,11 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="grid grid-cols-2 gap-2">
-          <button className="bg-yellow-500 hover:opacity-90 text-white text-2xl h-[50px] px-[20px] rounded-none">
-            Details
-          </button>
+          <Link to={`/details/${product._id}`}>
+            <button className="bg-yellow-500 hover:opacity-90 text-white text-2xl h-[50px] px-[20px] rounded-none">
+              Details
+            </button>
+          </Link>
           <Link to={`/update/${product._id}`}>
             <button className="bg-yellow-500 hover:opacity-90 text-white text-2xl h-[50px] px-[20px] rounded-none">
               Update

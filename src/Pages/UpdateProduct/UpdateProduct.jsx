@@ -42,7 +42,7 @@ const UpdateProduct = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="container px-2 mx-auto">
+    <div className="container px-2 mx-auto mt-10 mb-10">
       <Toaster />
       <div className="hero">
         <div className="flex-col md:flex-row-reverse hero-content">
