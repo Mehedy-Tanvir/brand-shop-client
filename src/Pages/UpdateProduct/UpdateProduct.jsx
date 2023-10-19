@@ -1,11 +1,12 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateProduct = () => {
   const productToUpdate = useLoaderData();
 
   const [selectedBrand, setBrand] = useState(`${productToUpdate.brand}`);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -26,16 +27,17 @@ const UpdateProduct = () => {
       description,
     };
     console.log(product);
-    fetch("http://localhost:3000/products", {
-      method: "POST",
+    fetch(`http://localhost:3000/products/${productToUpdate._id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(product),
     })
       .then((res) => {
-        toast.success("Product added successfully");
+        toast.success("Product updated successfully");
         console.log(res);
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };
