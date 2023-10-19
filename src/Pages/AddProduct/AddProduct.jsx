@@ -23,6 +23,15 @@ const AddProduct = () => {
       description,
     };
     console.log(product);
+    fetch("http://localhost:3000/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
     toast.success("Product added successfully");
   };
   return (
