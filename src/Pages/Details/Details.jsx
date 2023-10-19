@@ -23,7 +23,10 @@ const Details = () => {
         toast.success("Product added to cart successfully");
         console.log(res);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        toast.error("Unable to add product to the cart");
+      });
   };
   return (
     <div className="container px-2 mx-auto mt-10 mb-10 lg:px-10">

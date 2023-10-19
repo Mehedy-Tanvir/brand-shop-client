@@ -9,7 +9,7 @@ const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   if (loading) {
     return (
-      <div className="flex items-start justify-center h-[100vh]">
+      <div className="flex items-start justify-center h-screen">
         <span className="block loading loading-spinner loading-lg text-[#6C2C70]"></span>
       </div>
     );
