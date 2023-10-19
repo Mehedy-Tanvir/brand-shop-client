@@ -20,7 +20,7 @@ const Details = () => {
       body: JSON.stringify(userCart),
     })
       .then((res) => {
-        toast.success("Product added to cart successfully");
+        toast.success("Product added to your cart successfully");
         console.log(res);
       })
       .catch((error) => {
