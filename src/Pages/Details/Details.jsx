@@ -1,8 +1,30 @@
 import Rating from "react-rating";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { useLoaderData } from "react-router-dom";
+import auth from "../../firebase/firebaseConfig";
+import toast from "react-hot-toast";
 const Details = () => {
   const product = useLoaderData();
+
+  const handleAddToCart = (productToAdd) => {
+    const userCart = {
+      user: auth.currentUser.uid,
+      cart: [productToAdd],
+    };
+
+    fetch(`http://localhost:3000/userCart/${auth.currentUser.uid}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userCart),
+    })
+      .then((res) => {
+        toast.success("Product added to cart successfully");
+        console.log(res);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="container px-2 mx-auto mt-10 mb-10 lg:px-10">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -34,7 +56,10 @@ const Details = () => {
           <p className="mb-2 text-2xl text-yellow-600 font-regular">
             Price: ${product.price}
           </p>
-          <button className="bg-yellow-500 mb-2 hover:opacity-90 text-white text-2xl h-[50px] px-[20px] rounded-none">
+          <button
+            onClick={() => handleAddToCart(product)}
+            className="bg-yellow-500 mb-2 hover:opacity-90 text-white text-2xl h-[50px] px-[20px] rounded-none"
+          >
             Add to Cart
           </button>
           <p className="">
