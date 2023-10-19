@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="border-2 border-yellow-500 justify-self-center card lg:w-96 bg-base-100">
+    <div className="w-full border-2 border-yellow-500 shadow-xl justify-self-center card lg:w-96 bg-base-100">
       <figure className="p-4">
         <img
           className="h-[200px] object-cover object-center"
@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
 
         <div className="grid grid-cols-2">
           <p className="text-xl font-regular">Type: {product.type}</p>
-          <p className="text-2xl text-yellow-600 font-regular">
+          <p className="text-xl text-yellow-600 md:text-2xl font-regular">
             Price: ${product.price}
           </p>
         </div>

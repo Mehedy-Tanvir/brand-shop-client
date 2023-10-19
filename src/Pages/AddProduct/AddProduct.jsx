@@ -37,7 +37,7 @@ const AddProduct = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="container px-2 mx-auto">
+    <div className="container px-2 mx-auto mt-10 mb-10">
       <Toaster />
       <div className="hero">
         <div className="flex-col md:flex-row-reverse hero-content">
@@ -48,7 +48,7 @@ const AddProduct = () => {
               alt=""
             />
           </div>
-          <div className="flex-shrink-0 border-2 border-yellow-500 card">
+          <div className="flex-shrink-0 border-2 border-yellow-500 shadow-xl card">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                 <div className="md:col-span-2 form-control">

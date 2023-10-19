@@ -53,7 +53,7 @@ const UpdateProduct = () => {
               alt=""
             />
           </div>
-          <div className="flex-shrink-0 border-2 border-yellow-500 card">
+          <div className="flex-shrink-0 border-2 border-yellow-500 shadow-xl card">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                 <div className="md:col-span-2 form-control">

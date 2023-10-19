@@ -3,10 +3,11 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
+import auth from "../../firebase/firebaseConfig";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { googleSignIn, registerUser } = useContext(AuthContext);
+  const { googleSignIn, registerUser, profileUpdate } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const handleGoogleSignIn = () => {
@@ -22,6 +23,8 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     if (password.length < 6) {
@@ -35,19 +38,26 @@ const Register = () => {
     }
     registerUser(email, password)
       .then(() => {
-        e.target.email.value = "";
-        e.target.password.value = "";
-        toast.success("User registered successfully");
-        if (location.state) {
-          navigate(location.state);
-        } else {
-          navigate("/");
-        }
+        profileUpdate(name, image)
+          .then(() => {
+            e.target.name.value = "";
+            e.target.image.value = "";
+            e.target.email.value = "";
+            e.target.password.value = "";
+            console.log(auth.currentUser);
+            toast.success("User registered successfully");
+            if (location.state) {
+              navigate(location.state);
+            } else {
+              navigate("/");
+            }
+          })
+          .catch((error) => console.log(error));
       })
       .catch((error) => toast.error(error.message));
   };
   return (
-    <div className="container px-2 mx-auto">
+    <div className="container px-2 mx-auto mt-10 mb-10">
       <div>
         <Toaster />
       </div>
@@ -60,9 +70,32 @@ const Register = () => {
               alt=""
             />
           </div>
-          <div className="flex-shrink-0 w-full md:w-[400px] border-2 border-yellow-500 card">
+          <div className="flex-shrink-0 w-full md:w-[400px] border-2 shadow-xl border-yellow-500 card">
             <form onSubmit={handleSubmit} className="card-body">
-              <div></div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Image</span>
+                </label>
+                <input
+                  name="image"
+                  type="text"
+                  placeholder="image url"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

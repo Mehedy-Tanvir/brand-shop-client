@@ -51,7 +51,7 @@ const Login = () => {
               alt=""
             />
           </div>
-          <div className="flex-shrink-0 w-full md:w-[400px] border-2 border-yellow-500 card">
+          <div className="flex-shrink-0 w-full md:w-[400px] border-2 shadow-xl border-yellow-500 card">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">

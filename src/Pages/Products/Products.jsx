@@ -95,7 +95,7 @@ const Products = () => {
           <h1 className="text-5xl font-bold text-center">No products found</h1>
         </div>
       )}
-      <div className="container grid grid-cols-1 gap-6 mx-auto mt-10 mb-10 md:grid-cols-2">
+      <div className="container grid grid-cols-1 gap-6 mx-auto mt-10 mb-10 md:grid-cols-2 xl:grid-cols-3">
         {loadedProducts?.map((product, idx) => (
           <ProductCard key={idx} product={product}></ProductCard>
         ))}
