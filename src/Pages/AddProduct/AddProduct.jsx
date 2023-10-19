@@ -30,9 +30,11 @@ const AddProduct = () => {
       },
       body: JSON.stringify(product),
     })
-      .then((res) => console.log(res))
+      .then((res) => {
+        toast.success("Product added successfully");
+        console.log(res);
+      })
       .catch((error) => console.log(error));
-    toast.success("Product added successfully");
   };
   return (
     <div className="container px-2 mx-auto">
