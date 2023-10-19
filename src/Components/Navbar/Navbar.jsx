@@ -1,10 +1,37 @@
 import { NavLink } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        toast.success("Logged out successfully");
+      })
+      .catch((error) => toast.error(error.message));
+  };
   const links = (
     <>
+      {user && (
+        <li className="order-first md:ml-0 text-[#111] text-[18px]">
+          <div className="flex flex-col items-start justify-center gap-2 lg:items-center lg:flex-row">
+            <img
+              className="h-[40px] w-[40px] object-cover object-center rounded-[50%] mr-2"
+              src={
+                user?.photoURL
+                  ? user.photoURL
+                  : "https://imagizer.imageshack.com/img923/6317/jRVw55.png"
+              }
+              alt=""
+            />
+            <p className="font-medium">{user?.displayName}</p>
+          </div>
+        </li>
+      )}
       <li>
         <NavLink
           className={({ isActive, isPending }) =>
@@ -12,7 +39,7 @@ const Navbar = () => {
               ? "pending"
               : isActive
               ? "lg:text-yellow-600 font-semibold text-[18px] underline"
-              : "lg:text-[#111] font-semibold text-[18px]"
+              : "text-[#111] font-semibold text-[18px]"
           }
           to="/"
         >
@@ -26,7 +53,7 @@ const Navbar = () => {
               ? "pending"
               : isActive
               ? "lg:text-yellow-600 font-semibold text-[18px] underline"
-              : "lg:text-[#111] font-semibold text-[18px]"
+              : "text-[#111] font-semibold text-[18px]"
           }
           to="/addProduct"
         >
@@ -40,7 +67,7 @@ const Navbar = () => {
               ? "pending"
               : isActive
               ? "lg:text-yellow-600 font-semibold text-[18px] underline"
-              : "lg:text-[#111] font-semibold text-[18px]"
+              : "text-[#111] font-semibold text-[18px]"
           }
           to="/cart"
         >
@@ -49,20 +76,32 @@ const Navbar = () => {
           </p>
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "lg:text-yellow-600 font-semibold text-[18px] underline"
-              : "lg:text-[#111] font-semibold text-[18px]"
-          }
-          to="/login"
-        >
-          Login
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <div
+            onClick={handleLogout}
+            className="text-[#111] text-[18px] items-center font-semibold gap-1 cursor-pointer"
+          >
+            Logout
+          </div>
+        </li>
+      )}
+      {!user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "lg:text-yellow-600 font-semibold text-[18px] underline"
+                : "text-[#111] font-semibold text-[18px]"
+            }
+            to="/login"
+          >
+            Login
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (

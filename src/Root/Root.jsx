@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
   const location = useLocation();
@@ -11,6 +12,7 @@ const Root = () => {
       >
         <Navbar></Navbar>
       </div>
+      <Toaster />
       <Outlet></Outlet>
       <Footer></Footer>
     </div>
