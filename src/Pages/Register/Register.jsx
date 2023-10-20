@@ -145,7 +145,7 @@ const Register = () => {
                 />
                 <button
                   type="button"
-                  className="h-[40px] mt-4 w-full text-center border border-black font-medium text-black rounded-3xl"
+                  className="h-[40px] mt-4 w-full text-center border-2 border-[var(--google_color)] font-medium text-[var(--google_color)] rounded-3xl"
                   onClick={handleGoogleSignIn}
                 >
                   Sign In With Google

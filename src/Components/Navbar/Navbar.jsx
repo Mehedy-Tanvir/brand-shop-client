@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import PropTypes from "prop-types";
 
 const Navbar = ({ toggleTheme }) => {
   const { user, logoutUser } = useContext(AuthContext);
@@ -150,6 +151,9 @@ const Navbar = ({ toggleTheme }) => {
       </div>
     </div>
   );
+};
+Navbar.propTypes = {
+  toggleTheme: PropTypes.func.isRequired,
 };
 
 export default Navbar;

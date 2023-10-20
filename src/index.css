@@ -12,6 +12,7 @@
   --contact_background: gray-100;
   --contact_text1: gray-800;
   --contact_text2: gray-600;
+  --google_color: black;
 }
 [data-theme="dark"] {
   --body_background: #282c34;
@@ -20,6 +21,7 @@
   --contact_background: gray-800;
   --contact_text1: gray-100;
   --contact_text2: gray-50;
+  --google_color: white;
 }
 .swiper-slide {
   text-align: center;
