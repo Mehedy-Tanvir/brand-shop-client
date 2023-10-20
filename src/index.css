@@ -5,6 +5,22 @@
 .font-sans-serif {
   font-family: "Work Sans", sans-serif;
 }
+:root {
+  --body_background: white;
+  --body_color: black;
+  --button_yellow_color: yellow-500;
+  --contact_background: gray-100;
+  --contact_text1: gray-800;
+  --contact_text2: gray-600;
+}
+[data-theme="dark"] {
+  --body_background: #282c34;
+  --body_color: white;
+  --button_yellow_color: gray-100;
+  --contact_background: gray-800;
+  --contact_text1: gray-100;
+  --contact_text2: gray-50;
+}
 .swiper-slide {
   text-align: center;
   font-size: 18px;

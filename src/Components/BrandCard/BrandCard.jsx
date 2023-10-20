@@ -15,7 +15,7 @@ const BrandCard = ({ brand }) => {
         <div className="absolute z-20 w-full h-full rounded-lg bg-orange-50 opacity-30"></div>
 
         <div className="h-[100px] card-body">
-          <h1 className="z-50 text-5xl font-semibold text-center text-black ">
+          <h1 className="z-50 text-5xl font-semibold text-center text-[var(--body_color)] ">
             {brand.name}
           </h1>
         </div>
