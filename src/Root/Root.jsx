@@ -7,10 +7,16 @@ const Root = () => {
   const location = useLocation();
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
+    localStorage.setItem("selectedTheme", "dark");
   };
   const setLightMode = () => {
     document.querySelector("body").setAttribute("data-theme", "light");
+    localStorage.setItem("selectedTheme", "light");
   };
+  const selectedTheme = localStorage.getItem("selectedTheme");
+  if (selectedTheme === "dark") {
+    setDarkMode();
+  }
   const toggleTheme = (e) => {
     if (e.target.checked) {
       setDarkMode();
@@ -23,7 +29,10 @@ const Root = () => {
       <div
         className={location.pathname == "/" ? "absolute z-50 w-full" : "block"}
       >
-        <Navbar toggleTheme={toggleTheme}></Navbar>
+        <Navbar
+          selectedTheme={selectedTheme}
+          toggleTheme={toggleTheme}
+        ></Navbar>
       </div>
       <Toaster />
       <Outlet></Outlet>

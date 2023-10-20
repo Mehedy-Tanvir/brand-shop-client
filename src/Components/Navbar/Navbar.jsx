@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import PropTypes from "prop-types";
 
-const Navbar = ({ toggleTheme }) => {
+const Navbar = ({ toggleTheme, selectedTheme }) => {
   const { user, logoutUser } = useContext(AuthContext);
   const handleLogout = () => {
     logoutUser()
@@ -20,7 +20,11 @@ const Navbar = ({ toggleTheme }) => {
       <li className="flex items-center justify-start">
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
-          <input type="checkbox" onChange={toggleTheme} />
+          <input
+            type="checkbox"
+            defaultChecked={selectedTheme === "dark"}
+            onChange={toggleTheme}
+          />
 
           {/* sun icon */}
           <svg
@@ -154,6 +158,7 @@ const Navbar = ({ toggleTheme }) => {
 };
 Navbar.propTypes = {
   toggleTheme: PropTypes.func.isRequired,
+  selectedTheme: PropTypes.string.isRequired,
 };
 
 export default Navbar;
