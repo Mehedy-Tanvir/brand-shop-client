@@ -1,7 +1,7 @@
 const Faq = () => {
   return (
     <div className="container px-2 mx-auto mt-20 mb-10">
-      <h1 className="text-4xl font-semibold text-center">
+      <h1 className="text-4xl font-medium text-center md:text-5xl">
         Frequently Asked Questions
       </h1>
       <div className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">

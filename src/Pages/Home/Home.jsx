@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import BrandCard from "../../Components/BrandCard/BrandCard";
 import Faq from "../../Components/FAQ/Faq";
+import ContactUs from "../../Components/ContactUs/ContactUs";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -17,6 +18,7 @@ const Home = () => {
         ))}
       </div>
       <Faq></Faq>
+      <ContactUs></ContactUs>
     </div>
   );
 };
