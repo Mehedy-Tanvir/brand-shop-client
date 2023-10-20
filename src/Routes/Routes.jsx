@@ -19,7 +19,10 @@ const Routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/companies"),
+        loader: () =>
+          fetch(
+            "https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/companies"
+          ),
       },
       {
         path: "/addProduct",
@@ -49,7 +52,9 @@ const Routes = createBrowserRouter([
         path: "/brands/:name",
         element: <Products></Products>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/brands/${params.name}`),
+          fetch(
+            `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/brands/${params.name}`
+          ),
       },
       {
         path: "/update/:id",
@@ -59,7 +64,9 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.id}`),
+          fetch(
+            `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/details/:id",
@@ -69,7 +76,9 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.id}`),
+          fetch(
+            `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },

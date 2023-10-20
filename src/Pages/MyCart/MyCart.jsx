@@ -5,7 +5,9 @@ import CartCard from "../../Components/CartCard/CartCard";
 const MyCart = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/userCart/${auth.currentUser.uid}`)
+    fetch(
+      `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/userCart/${auth.currentUser.uid}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.cart);

@@ -8,7 +8,9 @@ const Products = () => {
   const brandName = name;
   const [brand, setBrand] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/companies")
+    fetch(
+      "https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/companies"
+    )
       .then((res) => res.json())
       .then((data) => {
         const filteredBrand = data?.find(

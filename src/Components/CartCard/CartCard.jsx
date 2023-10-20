@@ -12,13 +12,16 @@ const CartCard = ({ product, index, products, setProducts }) => {
       index,
     };
 
-    fetch(`http://localhost:3000/removeFromCart/${auth.currentUser.uid}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userCart),
-    })
+    fetch(
+      `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/removeFromCart/${auth.currentUser.uid}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userCart),
+      }
+    )
       .then((res) => {
         const newProducts = [...products];
         newProducts.splice(index, 1);

@@ -27,13 +27,16 @@ const UpdateProduct = () => {
       description,
     };
     console.log(product);
-    fetch(`http://localhost:3000/products/${productToUpdate._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/products/${productToUpdate._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => {
         toast.success("Product updated successfully");
         console.log(res);

@@ -23,13 +23,16 @@ const AddProduct = () => {
       description,
     };
     console.log(product);
-    fetch("http://localhost:3000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      "https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => {
         toast.success("Product added successfully");
         console.log(res);

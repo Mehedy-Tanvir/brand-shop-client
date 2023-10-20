@@ -12,13 +12,16 @@ const Details = () => {
       cart: [productToAdd],
     };
 
-    fetch(`http://localhost:3000/userCart/${auth.currentUser.uid}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userCart),
-    })
+    fetch(
+      `https://brand-shop-server-ip8kypgr8-md-mehedy-hasan-tanvirs-projects.vercel.app/userCart/${auth.currentUser.uid}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userCart),
+      }
+    )
       .then((res) => {
         toast.success("Product added to your cart successfully");
         console.log(res);

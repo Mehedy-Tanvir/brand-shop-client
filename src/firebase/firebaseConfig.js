@@ -6,13 +6,15 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+const all = import.meta.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCpowT_13FB6JXApAiMOmYfOSryrbS6HVY",
-  authDomain: "nexus-brand-store.firebaseapp.com",
-  projectId: "nexus-brand-store",
-  storageBucket: "nexus-brand-store.appspot.com",
-  messagingSenderId: "501831370158",
-  appId: "1:501831370158:web:638fdbb43724551dd9743f",
+  apiKey: all.VITE_apiKey,
+  authDomain: all.VITE_authDomain,
+  projectId: all.VITE_projectId,
+  storageBucket: all.VITE_storageBucket,
+  messagingSenderId: all.VITE_messagingSenderId,
+  appId: all.VITE_appId,
 };
 
 // Initialize Firebase
