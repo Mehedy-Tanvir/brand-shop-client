@@ -8,7 +8,7 @@ const Products = () => {
   const brandName = name;
   const [brand, setBrand] = useState([]);
   useEffect(() => {
-    fetch("/brand.json")
+    fetch("http://localhost:3000/companies")
       .then((res) => res.json())
       .then((data) => {
         const filteredBrand = data?.find(
