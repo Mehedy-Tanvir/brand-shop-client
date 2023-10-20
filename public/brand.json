@@ -2,31 +2,55 @@
   {
     "id": 1,
     "name": "Samsung",
-    "image": "https://imagizer.imageshack.com/img924/6282/h5FBh0.jpg"
+    "image": "https://imagizer.imageshack.com/img924/6282/h5FBh0.jpg",
+    "slide1": "https://imagizer.imageshack.com/img924/7057/ACfRaW.jpg",
+    "slide2": "https://imagizer.imageshack.com/img924/3512/rOmdVo.jpg",
+    "slide3": "https://imagizer.imageshack.com/img924/3306/PH6WVX.jpg",
+    "slide4": "https://imagizer.imageshack.com/img923/2033/A01ePn.png"
   },
   {
     "id": 2,
     "name": "Apple",
-    "image": "https://imagizer.imageshack.com/img923/182/5lPVAF.jpg"
+    "image": "https://imagizer.imageshack.com/img923/182/5lPVAF.jpg",
+    "slide1": "https://imagizer.imageshack.com/img922/9194/iZbZRD.jpg",
+    "slide2": "https://imagizer.imageshack.com/img922/2605/wv2s4r.png",
+    "slide3": "https://imagizer.imageshack.com/img922/1456/h6T96k.jpg",
+    "slide4": "https://imagizer.imageshack.com/img922/3185/CXjvcc.png"
   },
   {
     "id": 3,
     "name": "LG",
-    "image": "https://imagizer.imageshack.com/img923/6946/Swh8y0.jpg"
+    "image": "https://imagizer.imageshack.com/img923/6946/Swh8y0.jpg",
+    "slide1": "https://imagizer.imageshack.com/img923/8706/zDB0rf.jpg",
+    "slide2": "https://imagizer.imageshack.com/img922/3977/ykW6Bc.jpg",
+    "slide3": "https://imagizer.imageshack.com/img923/3435/qoiiho.jpg",
+    "slide4": "https://imagizer.imageshack.com/img923/6169/S05apH.jpg"
   },
   {
     "id": 4,
     "name": "HP",
-    "image": "https://imagizer.imageshack.com/img922/1823/Jm0nnD.jpg"
+    "image": "https://imagizer.imageshack.com/img922/1823/Jm0nnD.jpg",
+    "slide1": "https://imagizer.imageshack.com/img923/7764/JiM80y.jpg",
+    "slide2": "https://imagizer.imageshack.com/img922/3228/NEWPUZ.jpg",
+    "slide3": "https://imagizer.imageshack.com/img924/1918/GeTqBl.jpg",
+    "slide4": "https://imagizer.imageshack.com/img923/2781/n0r3w8.jpg"
   },
   {
     "id": 5,
     "name": "Sony",
-    "image": "https://imagizer.imageshack.com/img924/3268/GGhBsB.jpg"
+    "image": "https://imagizer.imageshack.com/img924/3268/GGhBsB.jpg",
+    "slide1": "https://imagizer.imageshack.com/img924/6130/gMwHdT.jpg",
+    "slide2": "https://imagizer.imageshack.com/img924/6967/PCvqpz.jpg",
+    "slide3": "https://imagizer.imageshack.com/img922/9119/z8wNSJ.jpg",
+    "slide4": "https://imagizer.imageshack.com/img922/9358/PyUxwh.jpg"
   },
   {
     "id": 6,
     "name": "Intel",
-    "image": "https://imagizer.imageshack.com/img922/8316/G77RZD.png"
+    "image": "https://imagizer.imageshack.com/img922/8316/G77RZD.png",
+    "slide1": "https://imagizer.imageshack.com/img924/8357/7NQbz8.jpg",
+    "slide2": "https://imagizer.imageshack.com/img923/7751/5S0skf.jpg",
+    "slide3": "https://imagizer.imageshack.com/img923/296/SbwS7e.jpg",
+    "slide4": "https://imagizer.imageshack.com/img922/9592/EyxtUE.jpg"
   }
 ]

@@ -1,10 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const Products = () => {
   const loadedProducts = useLoaderData();
-  console.log(loadedProducts);
+  const { name } = useParams();
+  const brandName = name;
+  const [brand, setBrand] = useState([]);
+  useEffect(() => {
+    fetch("/brand.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const filteredBrand = data?.find(
+          (company) => company.name === brandName
+        );
+        setBrand(filteredBrand);
+      })
+      .catch((error) => console.log(error));
+  }, [brandName]);
+
   useEffect(() => {
     const nextBtns = [
       document.querySelector("#next1"),
@@ -15,12 +29,12 @@ const Products = () => {
     let currentIndex = 0;
 
     const clickNextButton = () => {
-      nextBtns[currentIndex].click();
-      currentIndex++;
-      if (currentIndex === nextBtns.length) {
-        return () => {
-          clearInterval(interval);
-        };
+      if (currentIndex < nextBtns.length) {
+        nextBtns[currentIndex].click();
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+        clearInterval(interval);
       }
     };
 
@@ -34,10 +48,7 @@ const Products = () => {
     <div className="container mx-auto">
       <div className="w-full carousel">
         <div id="slide1" className="relative h-[500px] w-full carousel-item">
-          <img
-            src="https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Samsung-Galaxy-Social-Media-Banner-Design-scaled.jpg"
-            className="w-full"
-          />
+          <img src={brand.slide1} className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide4" className="btn btn-circle">
               ❮
@@ -48,10 +59,7 @@ const Products = () => {
           </div>
         </div>
         <div id="slide2" className="relative h-[500px] w-full carousel-item">
-          <img
-            src="https://techprolonged.com/wp-content/uploads/2017/04/galaxy-s8-s8-plus-banner.jpg"
-            className="w-full"
-          />
+          <img src={brand.slide2} className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide1" className="btn btn-circle">
               ❮
@@ -62,10 +70,7 @@ const Products = () => {
           </div>
         </div>
         <div id="slide3" className="relative h-[500px] w-full carousel-item">
-          <img
-            src="https://i.ytimg.com/vi/KS6tymacg9I/maxresdefault.jpg"
-            className="w-full"
-          />
+          <img src={brand.slide3} className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide2" className="btn btn-circle">
               ❮
@@ -76,10 +81,7 @@ const Products = () => {
           </div>
         </div>
         <div id="slide4" className="relative h-[500px] w-full carousel-item">
-          <img
-            src="https://img.global.news.samsung.com/global/wp-content/uploads/2015/03/1.png"
-            className="w-full"
-          />
+          <img src={brand.slide4} className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#slide3" className="btn btn-circle">
               ❮
