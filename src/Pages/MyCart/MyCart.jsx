@@ -13,6 +13,10 @@ const MyCart = () => {
       .then((data) => {
         setProducts(data.cart);
         setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
       });
   }, []);
   return (
