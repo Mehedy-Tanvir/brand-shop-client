@@ -2,31 +2,17 @@ const ContactUs = () => {
   return (
     <div className="px-2 py-12 bg-[var(--contact_background)]">
       <div className="container mx-auto">
-        <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+        <h2 className="text-4xl font-medium text-center md:text-6xl">
+          Contact Nexus
+        </h2>
+        <div className="grid items-center grid-cols-1 gap-8 mt-10 md:grid-cols-2">
+          <img src="/contact-us.jpg" alt="" />
+
           <div>
-            <h2 className="text-4xl font-medium text-center md:text-5xl">
-              Contact Nexus
-            </h2>
             <p className="mt-6 mb-6 text-lg text-[var(--contact_text2)]">
               Have questions or need assistance? Feel free to reach out to us.
               We are here to help you with your tech needs.
             </p>
-            <div className="text-left">
-              <h3 className="mb-2 text-2xl font-semibold text-[var(--contact_text1)]">
-                Contact Information
-              </h3>
-              <p className="text-[var(--contact_text2)]">
-                <strong>Address:</strong> 123 Nexus Street, Tech City, 12345
-              </p>
-              <p className="text-[var(--contact_text2)]">
-                <strong>Phone:</strong> (123) 456-7890
-              </p>
-              <p className="text-[var(--contact_text2)]">
-                <strong>Email:</strong> info@nexus-techstore.com
-              </p>
-            </div>
-          </div>
-          <div>
             <form>
               <div className="mb-4">
                 <label
@@ -82,6 +68,20 @@ const ContactUs = () => {
                 </button>
               </div>
             </form>
+            <div className="mt-10 text-left">
+              <h3 className="mb-2 text-2xl font-semibold text-[var(--contact_text1)]">
+                Contact Information
+              </h3>
+              <p className="text-[var(--contact_text2)]">
+                <strong>Address:</strong> 123 Nexus Street, Tech City, 12345
+              </p>
+              <p className="text-[var(--contact_text2)]">
+                <strong>Phone:</strong> (123) 456-7890
+              </p>
+              <p className="text-[var(--contact_text2)]">
+                <strong>Email:</strong> info@nexus-techstore.com
+              </p>
+            </div>
           </div>
         </div>
       </div>
