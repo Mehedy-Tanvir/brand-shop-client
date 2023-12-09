@@ -136,7 +136,7 @@ const Navbar = ({ toggleTheme, selectedTheme }) => {
   return (
     <div className="container flex items-center justify-between px-2 py-4 mx-auto">
       <div className="flex items-center justify-center">
-        <img className="" src="/logo.svg" alt="logo" />
+        <img className="" src="/assets/logo.svg" alt="logo" />
         <p className="text-4xl font-semibold">NEXUS</p>
       </div>
       <ul className="lg:flex hidden items-center uppercase justify-between gap-[60px]">
